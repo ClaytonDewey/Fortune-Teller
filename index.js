@@ -1,6 +1,7 @@
 // Get the DOM elements
 const btn = document.querySelector("button");
 const fortune = document.querySelector("#fortune");
+let timeout;
 
 // The fortune responses
 let responses = [
@@ -24,6 +25,14 @@ let responses = [
   "My sources say no.",
   "Outlook not so good.",
   "Very doubtful.",
+];
+
+// Loading messages
+let loading = [
+  "Consulting the spirits...",
+  "Gazing into the depths of the future...",
+  "BRB, jumping into my time machine...",
+  "I see... I see...",
 ];
 
 /**
@@ -55,8 +64,18 @@ function shuffle(array) {
  * Get the fortune and render it into the DOM
  */
 function getFortune() {
-  shuffle(responses);
-  fortune.textContent = responses[0];
+  // Show a loading message
+  shuffle(loading);
+  fortune.textContent = loading[0];
+
+  // Clear any existing fortunes
+  clearTimeout(timeout);
+
+  // Set the fortune to show in 2 seconds
+  timeout = setTimeout(function () {
+    shuffle(responses);
+    fortune.textContent = responses[0];
+  }, 2000);
 }
 
 // Listen for the clicks on the button
