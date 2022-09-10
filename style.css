@@ -1,0 +1,62 @@
+html {
+  /* This defines what 1rem is. */
+  font-size: 62.5%; /* 1rem = 10px; */
+  font-style: normal;
+  font-weight: normal;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px auto;
+  width: 100%;
+  box-sizing: border-box;
+  background: #333;
+  color: #f1f1f1;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+h1 {
+  margin-bottom: 3rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 1.5rem;
+}
+
+#fortune {
+  margin-top: 2rem;
+}
