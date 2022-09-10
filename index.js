@@ -27,16 +27,6 @@ let responses = [
 ];
 
 /**
- * Get the fortune and render it into the DOM
- */
-function getFortune() {
-  fortune.textContent = `You're going to have a wonderful day!`;
-}
-
-// Listen for the clicks on the button
-btn.addEventListener("click", getFortune);
-
-/**
  * Randomly shuffle an array
  * https://stackoverflow.com/a/2450976/1293256
  * @param  {Array} array The array to shuffle
@@ -60,3 +50,14 @@ function shuffle(array) {
 
   return array;
 }
+
+/**
+ * Get the fortune and render it into the DOM
+ */
+function getFortune() {
+  shuffle(responses);
+  fortune.textContent = responses[0];
+}
+
+// Listen for the clicks on the button
+btn.addEventListener("click", getFortune);
